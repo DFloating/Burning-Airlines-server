@@ -6,7 +6,7 @@ class CreateFlights < ActiveRecord::Migration[5.2]
       t.text :origin
       t.text :destination
       t.text :date
-      t.text :plane
+      t.integer :plane_id
 
       t.timestamps
     end

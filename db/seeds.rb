@@ -8,7 +8,7 @@
 
 User.destroy_all
 u1 = User.create :user_name => 'chicken', :password => 'chicken', :admin => true
-u2 = User.create :user_name => 'lettuce', :password => 'lettuce', :admin => false
+u2 = User.create :user_name => 'lettuce', :password => 'chicken', :admin => false
 puts "#{ User.count } users created"
 
 Plane.destroy_all
@@ -17,8 +17,8 @@ p2 = Plane.create :rows => '4', :columns => '4', :plane_name => "BA202"
 puts "#{ Plane.count } planes created"
 
 Flight.destroy_all
-f1 = Flight.create :number => '001', :origin => 'SYD', :destination => 'MLB', :date => '2023-05-09'
-f2 = Flight.create :number => '002', :origin => 'AKL', :destination => 'SYD', :date => '2023-05-09'
+f1 = Flight.create :number => '001', :origin => 'SYD', :destination => 'MLB', :date => '2023-05-09', :plane_id => p1.id
+f2 = Flight.create :number => '002', :origin => 'AKL', :destination => 'SYD', :date => '2023-05-09', :plane_id => p2.id
 puts "#{ Flight.count } flights created" 
 
 
