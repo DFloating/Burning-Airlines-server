@@ -21,7 +21,7 @@ ActiveRecord::Schema.define(version: 2023_05_09_071416) do
     t.text "origin"
     t.text "destination"
     t.text "date"
-    t.text "plane"
+    t.integer "plane_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
