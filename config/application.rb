@@ -19,6 +19,15 @@ Bundler.require(*Rails.groups)
 
 module BurningAirlinesServer
   class Application < Rails::Application
+    config.middleware.use Rack::Cors do
+      allow do
+        origins '*'
+        resource '*',
+                 headers: :any,
+                 expose: %w(access-token expiry token-type uid client),
+                 methods: %i(post)
+      end
+    end
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 5.2
 
