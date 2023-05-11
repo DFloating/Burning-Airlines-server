@@ -22,7 +22,7 @@ class FlightsController < ApplicationController
   # POST /flights or /flights.json
   def create
     @flight = Flight.new(flight_params)
-
+    @flight.plane_id = params[:plane]
     respond_to do |format|
       if @flight.save
         format.html { redirect_to flight_url(@flight), notice: "Flight was successfully created." }
